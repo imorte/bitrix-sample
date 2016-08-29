@@ -1,1 +1,4 @@
 /bitrix
+!/bitrix/components
+!/bitrix/php_interface
+!/bitrix/templates
