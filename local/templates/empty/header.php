@@ -102,66 +102,73 @@ $bIsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
     );?>
 
     <?if($bIsMainPage):?>
-        <div class="slider-responsive">
-            <div class="slider-responsive-panel">
-                <input data-toggle="radio-switch" type="checkbox">
-                <span>Наши лучшие предложения Вам</span>
-            </div>
-            <div class="toggle-height">
-                <div class="slider-responsive-controls">
-                    <a class="hidden-xs" href="#prev"></a>
-                    <a class="hidden-xs" href="#next"></a>
-                </div>
-                <div class="slider-responsive-inner">
 
-
-                    <div class="slider-responsive-inner-item active">
-                        <div class="slider-responsive-inner-item-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/slider-main/1.jpg')">
-                            <div class="slider-responsive-inner-item-img-title">
-                                <div class="h2">Одежда для велосипедистов</div>
-                                <div>В следующем году наша компания начинает коллекции одежды для велосипедистов. Не пропустите!</div>
-                                <a href="#" class="link">Подробнее...</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-responsive-inner-item">
-                        <div class="slider-responsive-inner-item-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/slider-main/2.jpg')">
-                            <div class="slider-responsive-inner-item-img-title">
-                                <div class="h2">Одежда для бега</div>
-                                <div>Новая коллекция спортивной одежды для бега</div>
-                                <a href="#" class="link">Подробнее...</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-responsive-inner-item">
-                        <div class="slider-responsive-inner-item-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/slider-main/3.jpg')">
-                            <div class="slider-responsive-inner-item-img-title">
-                                <div class="h2">Ценопад! Успейте купить на этой неделе!</div>
-                                <div>Наступила осень. Желтеют и опадают листья, навевая уныние и тоску о закончившемся лете. Раскрасьте хмурые будни, спешите на осеннюю акцию Ценопад! Лучшие цены осени, только качественные товары!</div>
-                                <a href="#" class="link">Подробнее...</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-responsive-inner-item">
-                        <div class="slider-responsive-inner-item-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/slider-main/4.jpg')">
-                            <div class="slider-responsive-inner-item-img-title">
-                                <div class="h2">Новая коллекция нижнего белья</div>
-                                <div>Девочки, спешите! Новое поступление красивейшего нижнего белья. Первым 100 оптовым покупателям - скидка 10%! Отличное качество, известные бренды. В наличии весь размерный ряд.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-responsive-inner-item">
-                        <div class="slider-responsive-inner-item-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/slider-main/5.jpg')">
-                            <div class="slider-responsive-inner-item-img-title">
-                                <div class="h2">Гимнастические купальники</div>
-                                <div>Все для занятия гимнастикой в нашем ассортименте</div>
-                                <a href="#" class="link">Подробнее...</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:news.list",
+            "index",
+            array(
+                "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                "ADD_SECTIONS_CHAIN" => "N",
+                "AJAX_MODE" => "N",
+                "AJAX_OPTION_ADDITIONAL" => "",
+                "AJAX_OPTION_HISTORY" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_STYLE" => "Y",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+                "CACHE_TIME" => "36000000",
+                "CACHE_TYPE" => "A",
+                "CHECK_DATES" => "Y",
+                "DETAIL_URL" => "",
+                "DISPLAY_BOTTOM_PAGER" => "Y",
+                "DISPLAY_DATE" => "N",
+                "DISPLAY_NAME" => "Y",
+                "DISPLAY_PICTURE" => "Y",
+                "DISPLAY_PREVIEW_TEXT" => "Y",
+                "DISPLAY_TOP_PAGER" => "N",
+                "FIELD_CODE" => array(
+                    0 => "NAME",
+                    1 => "PREVIEW_TEXT",
+                    2 => "PREVIEW_PICTURE",
+                    3 => "",
+                ),
+                "FILTER_NAME" => "",
+                "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                "IBLOCK_ID" => "1",
+                "IBLOCK_TYPE" => "index",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                "INCLUDE_SUBSECTIONS" => "N",
+                "MESSAGE_404" => "",
+                "NEWS_COUNT" => "50",
+                "PAGER_BASE_LINK_ENABLE" => "N",
+                "PAGER_DESC_NUMBERING" => "N",
+                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                "PAGER_SHOW_ALL" => "N",
+                "PAGER_SHOW_ALWAYS" => "N",
+                "PAGER_TEMPLATE" => ".default",
+                "PAGER_TITLE" => "Новости",
+                "PARENT_SECTION" => "",
+                "PARENT_SECTION_CODE" => "",
+                "PREVIEW_TRUNCATE_LEN" => "",
+                "PROPERTY_CODE" => array(
+                    0 => "url",
+                    1 => "",
+                ),
+                "SET_BROWSER_TITLE" => "N",
+                "SET_LAST_MODIFIED" => "N",
+                "SET_META_DESCRIPTION" => "N",
+                "SET_META_KEYWORDS" => "N",
+                "SET_STATUS_404" => "N",
+                "SET_TITLE" => "N",
+                "SHOW_404" => "N",
+                "SORT_BY1" => "SORT",
+                "SORT_BY2" => "ACTIVE_FROM",
+                "SORT_ORDER1" => "ASC",
+                "SORT_ORDER2" => "DESC",
+                "COMPONENT_TEMPLATE" => "index"
+            ),
+            false
+        );?>
 
         <div class="activities-description-wrap">
             <div class="activities-description">
